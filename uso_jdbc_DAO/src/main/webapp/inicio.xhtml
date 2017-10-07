@@ -1,0 +1,52 @@
+<!--VISTA-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Pagina de prueba</title>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            Mi nombre es Jorge Paredes
+            <h1>Apunto de ser bueno en Java EE</h1>
+
+            <h1>Registro de un nuevo cliente</h1>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Codigo cliente"/>
+                <p:inputText value="#{miCliente.cliente.codigo}"/>
+
+                <p:outputLabel value="Nombre"/>
+                <p:inputText value="#{miCliente.cliente.nombre}"/>
+
+                <p:outputLabel value="Apellidos"/>
+                <p:inputText value="#{miCliente.cliente.apellidos}"/>
+
+                <p:outputLabel value="Pais"/>
+                <p:selectOneMenu value="#{miCliente.cliente.pais}">
+                    <f:selectItem itemLabel="Mexico" itemValue="Mexico"/>
+                    <f:selectItem itemLabel="Brasil" itemValue="Brasil"/>
+                    <f:selectItem itemLabel="Estados Unidos" itemValue="USA"/>
+
+                </p:selectOneMenu>
+
+                <p:outputLabel value="Sexo"/>
+                <p:selectOneMenu value="#{miCliente.cliente.sexo}">
+                    <f:selectItem itemLabel="Masculino" itemValue="H"/>
+                    <f:selectItem itemLabel="Femenino" itemValue="M"/>
+                </p:selectOneMenu>
+
+                <p:outputLabel for="button1" value="Fecha de Nacimiento" />
+                <p:calendar id="button1"  value="#{miCliente.cliente.fecha_nacimiento}" showOn="button" />
+
+
+                <p:commandButton value="Guardar" actionListener="#{miCliente.guardarCliente()}"/>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

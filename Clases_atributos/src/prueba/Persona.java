@@ -13,6 +13,9 @@ public class Persona {
     String nombre;
     String sexo;
     int edad;
+    String [] sa  = new String[3];
+    
+    
     
     
     public void caminar(){

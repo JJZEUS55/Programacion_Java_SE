@@ -1,0 +1,37 @@
+1. Primero cargar el servidor en netbeans
+	glassfish, payara, tomcat etc
+
+2. Descargar mysql-connector de la pagina de mysl
+	solo ocupar el .bin
+
+3. Meter el .bin en la direccion del servidor
+	c:\\user\payara_server\glashfish\domains\domain1\lib
+
+no se en cual de todos los domains vaya asi que meterlo en cada uno
+
+4. Reiniciamos el servidor en netbeans
+
+5. Meterse al local host en un navegador
+
+parte derecha opciones del servidor
+
+Creamos una nueva coneccion
+	Resources/ Connextion pools
+
+		ponemos un nombre cualquiera
+		en Resource Type agregamos javax.sql data source
+		y agregamos que tipo de base de datos es sql, mysql, oracle etc
+
+		solo ocupamos URL, user, password
+
+terminada de crear le hacemos ping a la base de datos
+
+Resources/ JDBC Resource
+	agregamos el nombre y el jndi no se de donde se toma
+
+
+Despues hacemos un clean and build al projecto para generar el jar
+
+Vamos al localhost del servidor
+	Applications
+	seleccinar archivo y seleccionamos el jar del projecto (proyeto/target)
